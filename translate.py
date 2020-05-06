@@ -65,11 +65,9 @@ if start != -1:
     model.load("./{}/save/{}_{}.pkl".format(method,datatype,start))
     model.set_trainer()
         
-has_valid = 0
 test_dataset = BackgroundGenerator(get_batch(test_ast,test_nl,config.TEST_BATCH_SIZE,test_api), 1)
 corpus = []
 for x_raw,y_raw,z_raw in test_dataset:
-    has_test += 1
     x = [[ast_w2i[token] if token in ast_w2i else ast_w2i['<UNK>'] for token in line[:config.MAX_SEQ_LEN]] for line in x_raw]
     if method == "TLCodeSum" or method == "RLComAPI":
         z = [[api_w2i[token] if token in api_w2i else api_w2i['<UNK>'] for token in line[:config.MAX_API_LEN]] for line in z_raw]   
