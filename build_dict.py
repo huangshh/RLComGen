@@ -14,10 +14,10 @@ code_dict = defaultdict(int)
 
 with open(token_path,encoding="utf8") as f1, open(nl_path,encoding="utf8") as f2, open(api_path,encoding="utf8") as f3, open(code_path,encoding='utf8') as f4:
     for line1, line2, line3,line4 in zip(f1,f2,f3,f4):
-        ast_token = line1.split(" ")
-        nl_token = line2.split(" ")
-        api_token = line3.split(" ")
-        code_token = line4.split(" ")
+        ast_token = line1.strip().split(" ")
+        nl_token = line2.strip().split(" ")
+        api_token = line3.strip().split(" ")
+        code_token = line4.strip().split(" ")
         
         for token in ast_token:
             ast_dict[token] += 1

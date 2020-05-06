@@ -6,7 +6,7 @@ for mode in ["train","valid","test"]:
     api_path = os.path.join(path,"{}.token-nl2.api".format(mode))
     with open(token_path,encoding="utf8") as f1, open(api_path,"w",encoding="utf8") as f2:
         for line in f1:
-            ast_token = line.split(" ")
+            ast_token = line.strip().split(" ")
             api_token = []
             num = 0
             for token in ast_token:

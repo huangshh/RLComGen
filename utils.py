@@ -28,8 +28,8 @@ def get_batch(ast_file,nl_file,batch_size,api_file=None):
         y_raw = []
         with open(ast_file) as f1, open(nl_file) as f2:
             for x,y in zip(f1,f2):
-                x_ = x.split(" ")
-                y_ = y.split(" ")
+                x_ = x.strip().split(" ")
+                y_ = y.strip().split(" ")
                 x_raw.append(x_)
                 y_raw.append(y_)
                 if len(x_raw)>=batch_size:
@@ -45,9 +45,9 @@ def get_batch(ast_file,nl_file,batch_size,api_file=None):
         z_raw = []
         with open(ast_file) as f1, open(nl_file) as f2, open(api_file) as f3:
             for x,y,z in zip(f1,f2,f3):
-                x_ = x.split(" ")
-                y_ = y.split(" ")
-                z_ = z.split(" ")
+                x_ = x.strip().split(" ")
+                y_ = y.strip().split(" ")
+                z_ = z.strip().split(" ")
                 x_raw.append(x_)
                 y_raw.append(y_)
                 z_raw.append(z_)
