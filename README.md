@@ -3,7 +3,7 @@
 RLCodeGen is a project using reinforcement learning algorithm Actor-Critic to generate summarization for code snippet.
 The source code and dataset are opened.
 
-# Requirments
+# Requirements
 
 Python 3.7
 
